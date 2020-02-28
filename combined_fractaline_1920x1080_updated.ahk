@@ -1215,9 +1215,9 @@ If !Toggle
 	break
 	
 Click d
-Sleep, 1050
+Sleep, 550
 Click u
-Sleep, 200
+Sleep, 100
 }
 return
 
