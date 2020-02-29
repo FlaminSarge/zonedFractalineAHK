@@ -223,21 +223,9 @@ Sleep, 1200
 If !Toggle
 	break
 	
-Send {u down}
+Send {F2 down}
 Sleep, 150
-Send {u up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
+Send {F2 up}
 Sleep, 850
 
 ; Redeem 4 bounties
@@ -357,21 +345,9 @@ Sleep, 1200
 If !Toggle
 	break
 	
-Send {u down}
+Send {F2 down}
 Sleep, 150
-Send {u up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
+Send {F2 up}
 Sleep, 850
 
 ; Redeem up 7 bounties
@@ -483,6 +459,7 @@ Sleep, 150
 Send {Right up}
 Sleep, 1200
 }
+SoundPlay, *48
 return
 
 ; -------------------------------------------------------------------------
@@ -560,21 +537,9 @@ Sleep, 1200
 If !Toggle
 	break
 	
-Send {u down}
+Send {F2 down}
 Sleep, 150
-Send {u up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
+Send {F2 up}
 Sleep, 850
 
 ; Redeem 7 Paradox bounties
@@ -765,21 +730,9 @@ Sleep, 1200
 If !Toggle
 	break
 	
-Send {u down}
+Send {F2 down}
 Sleep, 150
-Send {u up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
+Send {F2 up}
 Sleep, 850
 
 ; Redeem 7 Paradox bounties
@@ -903,21 +856,9 @@ Sleep, 1200
 If !Toggle
 	break
 	
-Send {u down}
+Send {F2 down}
 Sleep, 150
-Send {u up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
+Send {F2 up}
 Sleep, 850
 
 ; Redeem up 4 bounties
@@ -1006,6 +947,7 @@ Send {Right up}
 Sleep, 1200
 
 }
+SoundPlay, *48
 return
 
 ; -------------------------------------------------------------------------
@@ -1076,21 +1018,9 @@ Sleep, 1200
 If !Toggle
 	break
 	
-Send {u down}
+Send {F2 down}
 Sleep, 150
-Send {u up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
-Sleep, 250
-Send {a down}
-Sleep, 150
-Send {a up}
+Send {F2 up}
 Sleep, 850
 
 ; Redeem up 4 bounties
