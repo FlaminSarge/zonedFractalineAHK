@@ -276,7 +276,7 @@ return
 
 F4::
 Toggle := !Toggle
-loop, 40
+loop, 27
 {
 
 If !Toggle
@@ -284,43 +284,43 @@ If !Toggle
 	
 ; Buy up to 7 bounties
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 Click d
-Sleep, 500
+Sleep, 100
 Click u
 Sleep, 850
 
