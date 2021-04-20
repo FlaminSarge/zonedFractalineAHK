@@ -276,7 +276,7 @@ return
 
 F4::
 Toggle := !Toggle
-loop, 12
+loop, 40
 {
 
 If !Toggle
@@ -284,116 +284,45 @@ If !Toggle
 	
 ; Buy up to 7 bounties
 Click d
-Sleep, 1700
+Sleep, 500
 Click u
 Sleep, 850
 Click d
-Sleep, 1700
+Sleep, 500
 Click u
 Sleep, 850
 Click d
-Sleep, 1700
+Sleep, 500
 Click u
 Sleep, 850
 Click d
-Sleep, 1700
+Sleep, 500
 Click u
 Sleep, 850
 Click d
-Sleep, 1700
+Sleep, 500
 Click u
 Sleep, 850
 Click d
-Sleep, 1700
+Sleep, 500
 Click u
 Sleep, 850
 Click d
-Sleep, 1700
+Sleep, 500
 Click u
 Sleep, 850
-
-; Go to Window I
-Send {Left down}
-Sleep, 150
-Send {Left up}
-Sleep, 1200
-
-; Donate 400 Fractaline
-
-If !Toggle
-	break
-	
 Click d
-Sleep, 3100
+Sleep, 500
 Click u
-Sleep, 1200
-Click d
-Sleep, 3100
-Click u
-Sleep, 1200
-Click d
-Sleep, 3100
-Click u
-Sleep, 1200
-Click d
-Sleep, 3100
-Click u
-Sleep, 1200
-
-; Open Quest Screen
-
-If !Toggle
-	break
-	
-Send {F2 down}
-Sleep, 150
-Send {F2 up}
 Sleep, 850
-
-; Redeem up 7 bounties
-
-If !Toggle
-	break
-	
-MouseMove, 190, 0, 5, R
-Sleep, 800
 Click d
-Sleep, 300
+Sleep, 500
 Click u
-Sleep, 300
+Sleep, 850
 Click d
-Sleep, 300
+Sleep, 500
 Click u
-Sleep, 300
-Click d
-Sleep, 300
-Click u
-Sleep, 300
-Click d
-Sleep, 300
-Click u
-Sleep, 300
-Click d
-Sleep, 300
-Click u
-Sleep, 300
-Click d
-Sleep, 300
-Click u
-Sleep, 300
-Click d
-Sleep, 300
-Click u
-Sleep, 1000
-
-; Exit Quest menu and return to neutral position
-
-Send {Esc down}
-Sleep, 150
-Send {Esc up}
-Sleep, 1000
-MouseMove, -190, 0, 5, R
-Sleep, 1200
+Sleep, 850
 
 ; Open inventory, go to primary weapons then first weapon slot
 
@@ -404,9 +333,9 @@ Send {F1 down}
 Sleep, 150
 Send {F1 up}
 Sleep, 800
-MouseMove, -650, 120, 5, R
+MouseMove, 0, 580, 5, R
 Sleep, 800
-MouseMove, -100, 0, 5, R
+MouseMove, 100, 0, 5, R
 Sleep, 1000
 
 ; Dismantle up to 7 primary weapons
@@ -442,22 +371,25 @@ Send {f down}
 Sleep, 1050
 Send {f up}
 Sleep, 1000
+Send {f down}
+Sleep, 1050
+Send {f up}
+Sleep, 1000
+Send {f down}
+Sleep, 1050
+Send {f up}
+Sleep, 1000
 
 ; Exit Bounties and go back to neutral position
 Send {Esc down}
 Sleep, 150
 Send {Esc up}
 Sleep, 1200
-MouseMove, 100, 0, 5, R
+MouseMove, -100, 0, 5, R
 Sleep, 1200
-MouseMove, 650, -120, 5, R
+MouseMove, 0, -580, 5, R
 Sleep, 1200
 
-; Go to Window II then back to neutral position
-Send {Right down}
-Sleep, 150
-Send {Right up}
-Sleep, 1200
 }
 SoundPlay, *48
 return
