@@ -276,7 +276,7 @@ return
 
 F4::
 Toggle := !Toggle
-loop, 27
+loop, 28
 {
 
 If !Toggle
@@ -727,120 +727,104 @@ return
 
 F8::
 Toggle := !Toggle
-loop, 20
+loop, 109
 {
 
 If !Toggle
 	break
 
+Send {K down}
+Sleep, 150
+Send {K up}
+Sleep, 850
+
+MouseMove, -640, -380, 5, R
+Sleep, 100
+Click d
+Sleep, 100
+Click u
+Sleep, 850
+
+Send {S down}
+Sleep, 150
+Send {S up}
+Sleep, 300
+Send {S down}
+Sleep, 150
+Send {S up}
+Sleep, 300
+Send {S down}
+Sleep, 150
+Send {S up}
+Sleep, 300
+Send {S down}
+Sleep, 150
+Send {S up}
+Sleep, 300
+
+Send {Right down}
+Sleep, 150
+Send {Right up}
+Sleep, 600
+
+
 ; Buy up to 4 bounties
-MouseMove, 100, 0, 5, R
-Sleep, 800
 Click d
-Sleep, 1700
+Sleep, 3500
 Click u
-Sleep, 850
+Sleep, 550
 Click d
-Sleep, 1700
+Sleep, 3500
 Click u
-Sleep, 850
+Sleep, 550
 Click d
-Sleep, 1700
+Sleep, 3500
 Click u
-Sleep, 850
+Sleep, 550
 Click d
-Sleep, 1700
+Sleep, 3500
 Click u
-Sleep, 850
-MouseMove, -100, 0, 5, R
-Sleep, 850
-
-; Go to Window I
-Send {Left down}
-Sleep, 150
-Send {Left up}
-Sleep, 1200
-
-; Donate 400 Fractaline
-
-If !Toggle
-	break
-	
+Sleep, 550
 Click d
-Sleep, 3100
+Sleep, 3500
 Click u
-Sleep, 1200
+Sleep, 550
 Click d
-Sleep, 3100
+Sleep, 3500
 Click u
-Sleep, 1200
+Sleep, 550
 Click d
-Sleep, 3100
+Sleep, 3500
 Click u
-Sleep, 1200
+Sleep, 550
 Click d
-Sleep, 3100
+Sleep, 3500
 Click u
-Sleep, 1200
-
-; Open Quest Screen
-
-If !Toggle
-	break
-	
-Send {F2 down}
-Sleep, 150
-Send {F2 up}
-Sleep, 850
-
-; Redeem up 4 bounties
-
-If !Toggle
-	break
-	
-MouseMove, 190, 0, 5, R
-Sleep, 800
+Sleep, 550
 Click d
-Sleep, 300
+Sleep, 3500
 Click u
-Sleep, 300
-Click d
-Sleep, 300
-Click u
-Sleep, 300
-Click d
-Sleep, 300
-Click u
-Sleep, 300
-Click d
-Sleep, 300
-Click u
-Sleep, 1000
-
-; Exit Quest menu and return to neutral position
-
-Send {Esc down}
-Sleep, 150
-Send {Esc up}
-Sleep, 1000
-MouseMove, -190, 0, 5, R
-Sleep, 1200
+Sleep, 550
 
 ; Open inventory, go to primary weapons then first weapon slot
 
 If !Toggle
 	break
-	
-Send {F1 down}
+
+Send {Esc down}
 Sleep, 150
-Send {F1 up}
+Send {Esc up}
+Sleep, 800	
+Send {J down}
+Sleep, 150
+Send {J up}
 Sleep, 800
-MouseMove, -650, 300, 5, R
+MouseMove, 640, 380, 5, R
 Sleep, 800
-MouseMove, -100, 0, 5, R
+MouseMove, 100, 0, 5, R
 Sleep, 1000
 
-; Dismantle up to 4 primary weapons
+; Dismantle up to 7 primary weapons
 
 If !Toggle
 	break
@@ -861,22 +845,27 @@ Send {f down}
 Sleep, 1050
 Send {f up}
 Sleep, 1000
-
-; Exit Bounties and go back to neutral position
-Send {Esc down}
-Sleep, 150
-Send {Esc up}
-Sleep, 1200
-MouseMove, 100, 0, 5, R
-Sleep, 1200
-MouseMove, 650, -300, 5, R
-Sleep, 1200
-
-; Go to Window II
-Send {Right down}
-Sleep, 150
-Send {Right up}
-Sleep, 1200
+Send {f down}
+Sleep, 1050
+Send {f up}
+Sleep, 1000
+Send {f down}
+Sleep, 1050
+Send {f up}
+Sleep, 1000
+Send {f down}
+Sleep, 1050
+Send {f up}
+Sleep, 1000
+Send {f down}
+Sleep, 1050
+Send {f up}
+Sleep, 1000
+Send {f down}
+Sleep, 1050
+Send {f up}
+Sleep, 1000
+MouseMove, -100, 0, 5, R
 
 }
 SoundPlay, *48
