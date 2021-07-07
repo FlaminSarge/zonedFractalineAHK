@@ -276,7 +276,7 @@ return
 
 F4::
 Toggle := !Toggle
-loop, 28
+loop, 40
 {
 
 If !Toggle
@@ -284,45 +284,9 @@ If !Toggle
 	
 ; Buy up to 7 bounties
 Click d
-Sleep, 100
+Sleep, 1600
 Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
-Click d
-Sleep, 100
-Click u
-Sleep, 850
+Sleep, 800
 
 ; Open inventory, go to primary weapons then first weapon slot
 
@@ -333,9 +297,9 @@ Send {F1 down}
 Sleep, 150
 Send {F1 up}
 Sleep, 800
-MouseMove, 0, 580, 5, R
+MouseMove, 0, 595, 5, R
 Sleep, 800
-MouseMove, 100, 0, 5, R
+MouseMove, 315, 200, 5, R
 Sleep, 1000
 
 ; Dismantle up to 7 primary weapons
@@ -347,48 +311,20 @@ Send {f down}
 Sleep, 1050
 Send {f up}
 Sleep, 1000
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
 
 ; Exit Bounties and go back to neutral position
 Send {Esc down}
 Sleep, 150
 Send {Esc up}
 Sleep, 1200
-MouseMove, -100, 0, 5, R
-Sleep, 1200
-MouseMove, 0, -580, 5, R
-Sleep, 1200
+Send {Right down}
+Sleep, 150
+Send {Right up}
+Sleep, 600
+MouseMove, -315, -200, 5, R
+Sleep, 600
+MouseMove, 0, -595, 5, R
+Sleep, 1800
 
 }
 SoundPlay, *48
