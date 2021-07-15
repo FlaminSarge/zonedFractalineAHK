@@ -276,7 +276,7 @@ return
 
 F4::
 Toggle := !Toggle
-loop, 40
+loop, 96
 {
 
 If !Toggle
@@ -320,10 +320,8 @@ Sleep, 1200
 Send {Right down}
 Sleep, 150
 Send {Right up}
-Sleep, 600
-MouseMove, -315, -200, 5, R
-Sleep, 600
-MouseMove, 0, -595, 5, R
+Sleep, 1200
+MouseMove, 1380, 180, 5
 Sleep, 1800
 
 }
