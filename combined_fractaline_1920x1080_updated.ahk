@@ -270,60 +270,88 @@ Sleep, 1200
 return
 
 ; -------------------------------------------------------------------------
-; F4 = Full 12 loops to utilize 240k glimmer to buy a full set of bounties, donate 
-; fractaline, and shard weapons automatically.
+; F4 = Full 50 loops to utilize 240k glimmer to buy a full set of class 
+; items and melt them for legendary shards (527 glimmer per 3 shards)
 ; -------------------------------------------------------------------------
 
 F4::
 Toggle := !Toggle
-loop, 96
+loop, 50
 {
 
-If !Toggle
-	break
-	
-; Buy up to 7 bounties
-Click d
-Sleep, 1600
-Click u
-Sleep, 800
+	If !Toggle
+		break
 
-; Open inventory, go to primary weapons then first weapon slot
+	; open collections
+	Send {k down}
+	Sleep, 150
+	Send {k up}
+	Sleep, 800
+	MouseMove, -600, -400, 5, R
+	Sleep, 800
+	Click d
+	Sleep, 800
+	Click u
+	Sleep, 800
 
-If !Toggle
-	break
-	
-Send {F1 down}
-Sleep, 150
-Send {F1 up}
-Sleep, 800
-MouseMove, 0, 595, 5, R
-Sleep, 800
-MouseMove, 315, 200, 5, R
-Sleep, 1000
+	; navigate to leveling, 2nd page, bottom row final item
+	loop, 7
+	{
+		Send {s down}
+		Sleep, 150
+		Send {s up}
+		Sleep, 150
+	}
+	Send {Right down}
+	Sleep, 150
+	Send {Right up}
+	Sleep, 800
+	MouseMove, 200, 500, 5, R
+	Sleep, 800
 
-; Dismantle up to 7 primary weapons
+	; Buy up to 9 class items
+	loop, 9
+	{
+		If !Toggle
+			break
+		Click d
+		Sleep, 4200
+		Click u
+		Sleep, 600
+	}
 
-If !Toggle
-	break
-	
-Send {f down}
-Sleep, 1050
-Send {f up}
-Sleep, 1000
+	; Open inventory, go to class items then first item slot
 
-; Exit Bounties and go back to neutral position
-Send {Esc down}
-Sleep, 150
-Send {Esc up}
-Sleep, 1200
-Send {Right down}
-Sleep, 150
-Send {Right up}
-Sleep, 1200
-MouseMove, 1380, 180, 5
-Sleep, 1800
+	If !Toggle
+		break
 
+	Send {Esc down}
+	Sleep, 150
+	Send {Esc up}
+	Sleep, 800	
+	Send {j down}
+	Sleep, 150
+	Send {j up}
+	Sleep, 800
+	MouseMove, 300, -100, 5, R
+	Sleep, 800
+	MouseMove, 100, 0, 5, R
+	Sleep, 1000
+
+	; Dismantle up to 9 class items
+
+	If !Toggle
+		break
+
+	loop, 9
+	{
+		If !Toggle
+			break
+		Send {f down}
+		Sleep, 1050
+		Send {f up}
+		Sleep, 1000
+	}
 }
 SoundPlay, *48
 return
@@ -1000,7 +1028,7 @@ If !Toggle
 	break
 	
 Click d
-Sleep, 550
+Sleep, 250
 Click u
 Sleep, 100
 }
