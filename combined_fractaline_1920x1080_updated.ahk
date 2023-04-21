@@ -287,7 +287,7 @@ loop, 50
 	Sleep, 150
 	Send {k up}
 	Sleep, 800
-	MouseMove, -600, -400, 5, R
+	MouseMove, -700, -400, 5, R
 	Sleep, 800
 	Click d
 	Sleep, 800
@@ -295,7 +295,7 @@ loop, 50
 	Sleep, 800
 
 	; navigate to leveling, 2nd page, bottom row final item
-	loop, 7
+	loop, 4
 	{
 		Send {s down}
 		Sleep, 150
@@ -306,7 +306,7 @@ loop, 50
 	Sleep, 150
 	Send {Right up}
 	Sleep, 800
-	MouseMove, 200, 500, 5, R
+	MouseMove, -100, 400, 5, R	; 2nd number is -200 + the row number*100 for the medal class item e.g. row 6 use 400
 	Sleep, 800
 
 	; Buy up to 9 class items
@@ -333,7 +333,7 @@ loop, 50
 	Sleep, 150
 	Send {j up}
 	Sleep, 800
-	MouseMove, 300, -100, 5, R
+	MouseMove, 700, 0, 5, R	; 2nd number is 400 - the 2nd number in that previous medal line
 	Sleep, 800
 	MouseMove, 100, 0, 5, R
 	Sleep, 1000
