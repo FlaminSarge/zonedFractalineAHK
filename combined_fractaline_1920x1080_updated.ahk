@@ -270,88 +270,56 @@ Sleep, 1200
 return
 
 ; -------------------------------------------------------------------------
-; F4 = Full 50 loops to utilize 240k glimmer to buy a full set of class 
-; items and melt them for legendary shards (527 glimmer per 3 shards)
+; F4 = 1000 loops of picking up 9 synthoceps from ikora and melting them
 ; -------------------------------------------------------------------------
 
 F4::
 Toggle := !Toggle
-loop, 50
+loop, 1000
 {
 
 	If !Toggle
 		break
 
-	; open collections
-	Send {k down}
-	Sleep, 150
-	Send {k up}
-	Sleep, 800
-	MouseMove, -700, -400, 5, R
-	Sleep, 800
-	Click d
-	Sleep, 800
-	Click u
-	Sleep, 800
-
-	; navigate to leveling, 2nd page, bottom row final item
-	loop, 4
-	{
-		Send {s down}
-		Sleep, 150
-		Send {s up}
-		Sleep, 150
-	}
-	Send {Right down}
-	Sleep, 150
-	Send {Right up}
-	Sleep, 800
-	MouseMove, -100, 400, 5, R	; 2nd number is -200 + the row number*100 for the medal class item e.g. row 6 use 400
-	Sleep, 800
-
-	; Buy up to 9 class items
 	loop, 9
 	{
 		If !Toggle
 			break
 		Click d
-		Sleep, 4200
+		Sleep, 800
 		Click u
-		Sleep, 600
+		Sleep, 400
 	}
 
-	; Open inventory, go to class items then first item slot
-
-	If !Toggle
-		break
-
-	Send {Esc down}
+	; open collections
+	Send {f1 down}
 	Sleep, 150
-	Send {Esc up}
-	Sleep, 800	
-	Send {j down}
-	Sleep, 150
-	Send {j up}
+	Send {f1 up}
 	Sleep, 800
-	MouseMove, 700, 0, 5, R	; 2nd number is 400 - the 2nd number in that previous medal line
+	MouseMove, 240, -270, 5, R	; you will have to mess with the -270 value for other exotics/slots
 	Sleep, 800
 	MouseMove, 100, 0, 5, R
-	Sleep, 1000
-
-	; Dismantle up to 9 class items
-
-	If !Toggle
-		break
+	Sleep 1200
 
 	loop, 9
 	{
 		If !Toggle
 			break
 		Send {f down}
-		Sleep, 1050
+		Sleep, 5000
 		Send {f up}
 		Sleep, 1000
 	}
+	
+	If !Toggle
+		break
+
+	Send {f1 down}
+	Sleep, 150
+	Send {f1 up}
+	Sleep, 800
+	MouseMove, -340, 270, 5, R	; you will have to mess with the 270 value (negative of above) for other exotics/slots
+	Sleep 3000
 }
 SoundPlay, *48
 return
