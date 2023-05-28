@@ -27,7 +27,7 @@ Loop,
         Send {e up}
     }
 
-    sleep, 100 
+    sleep, 50 
 } 
 return
 
