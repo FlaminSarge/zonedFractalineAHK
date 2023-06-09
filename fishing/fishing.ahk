@@ -4,8 +4,9 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #MaxThreadsPerHotkey 2
 ; =======================================================================================
-; Start fishing then press F11, only tested at 1440p resolution with E as interact
+; Start fishing then press F11, only tested at 16:9, 16:10, and 4:3 standard resolutions
 ; =======================================================================================
+Widths := [1280, 1366, 1440, 1600, 1680, 1920, 2560]
 F11::
 Toggle := !Toggle
 LoopCount = 0
@@ -16,13 +17,36 @@ Else
 Loop,
 {
     If !Toggle {
+        Filename =
         Break
     }
-    If Not WinActive("ahk_exe destiny2.exe") {
+    hwnd := WinActive("ahk_exe destiny2.exe")
+    If Not hwnd {
+        Filename =
         Continue
     }
+    if (!Filename) {
+        GetClientSize(hwnd, Width, Height)
+        Closest = 2560
+        OldDist = 2560
+        For idx, w in Widths {
+            NewDist := Abs(w - Width)
+            Closest := NewDist < OldDist ? w : Closest
+            OldDist := NewDist < OldDist ? NewDist : OldDist
+        }
+        Filename = E.%Closest%.png
+        BoxX := (Width/2) + (-85*Width/2560)
+        BoxY := (Height/2) + (265*Height/1440)
+        TopLeftX := BoxX - 25
+        TopLeftY := BoxY - 25
+        BotRightX := BoxX + 25
+        BotRightY := BoxY + 25
+    }
+
     LoopCount++
-    ImageSearch, FoundX, FoundY, 1170, 960, 1210, 1010, E.png
+
+    CoordMode, Pixel, Client
+    ImageSearch, FoundX, FoundY, TopLeftX, TopLeftY, BotRightX, BotRightY, %Filename%
 
     if (ErrorLevel == 0) {
         ; SoundPlay, *48
@@ -57,6 +81,15 @@ Loop,
     }
 } 
 return
+
+
+GetClientSize(hwnd, ByRef w, ByRef h)
+{
+    VarSetCapacity(rc, 16)
+    DllCall("GetClientRect", "uint", hwnd, "uint", &rc)
+    w := NumGet(rc, 8, "int")
+    h := NumGet(rc, 12, "int")
+}
 
 ; -------------------------------------------------------------------------
 ; Left Ctl + Esc = Kill AHK script. Will need to be reactivated.
