@@ -1,5 +1,5 @@
 # Info
-Fishing script works on any 16:9, 16:10, or 4:3 resolution that's in the game's "Windowed" resolution list from 1280x720 to 2560x1440 (you can run one of those resolutions fullscreen as long as it is in the list for Windowed).
+Fishing script was only tested for any 16:9, 16:10, or 4:3 resolution that's in the game's "Windowed" resolution list from 1280x720 to 2560x1440 (you can run one of those resolutions fullscreen as long as it is in the list for Windowed). It _may_ work for ultrawide but most likely will not.
 
 # Usage
 1. Download `fishing.ahk` and all `E` png files to the same folder.
