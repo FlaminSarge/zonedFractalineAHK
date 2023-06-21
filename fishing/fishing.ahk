@@ -10,6 +10,7 @@ Widths := [1280, 1366, 1440, 1600, 1680, 1920, 2560]
 F11::
 Toggle := !Toggle
 LoopCount = 0
+WaitCount = 0
 If Toggle
     SoundPlay, *48
 Else
@@ -48,7 +49,8 @@ Loop,
     CoordMode, Pixel, Client
     ImageSearch, FoundX, FoundY, TopLeftX, TopLeftY, BotRightX, BotRightY, %Filename%
 
-    if (ErrorLevel == 0) {
+    if (ErrorLevel == 0 || WaitCount >= 12) {
+        WaitCount = 0
         ; SoundPlay, *48
         Send {e down}
         sleep 200
@@ -65,7 +67,8 @@ Loop,
         sleep 2000
         Send {e up}
     }
-    if (LoopCount > 100) {
+    if (LoopCount >= 100) {
+        WaitCount++
         ; SoundPlay, *48
         LoopCount = 0
         Send {d Down}
@@ -75,7 +78,7 @@ Loop,
         Send {a Down}
         sleep 12
         Send {a Up}
-        sleep 12
+        sleep 14
     } else {
         sleep 50
     }
