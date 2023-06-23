@@ -7,14 +7,18 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; Start fishing then press F11, only tested at 16:9, 16:10, and 4:3 standard resolutions
 ; =======================================================================================
 Widths := [1280, 1366, 1440, 1600, 1680, 1920, 2560]
+Menu, Tray, Icon, script_icon_off.png
 F11::
 Toggle := !Toggle
 LoopCount = 0
 WaitCount = 0
-If Toggle
+If Toggle {
+    Menu, Tray, Icon, script_icon_on.png
     SoundPlay, *48
-Else
+} Else {
+    Menu, Tray, Icon, script_icon_off.png
     SoundPlay, *16
+}
 Loop,
 {
     If !Toggle {
