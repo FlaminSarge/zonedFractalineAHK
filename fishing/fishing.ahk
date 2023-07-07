@@ -8,10 +8,12 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; =======================================================================================
 Widths := [1280, 1366, 1440, 1600, 1680, 1920, 2560]
 Menu, Tray, Icon, script_icon_off.png
+JIGGLE = 1
+RECAST = 1
+CROUCH = 1
 F11::
 Toggle := !Toggle
 LoopCount = 0
-WaitCount = 0
 If Toggle {
     Menu, Tray, Icon, script_icon_on.png
     SoundPlay, *48
@@ -53,36 +55,40 @@ Loop,
     CoordMode, Pixel, Client
     ImageSearch, FoundX, FoundY, TopLeftX, TopLeftY, BotRightX, BotRightY, %Filename%
 
-    if (ErrorLevel == 0 || WaitCount >= 12) {
-        WaitCount = 0
+    if (ErrorLevel == 0 || LoopCount >= 1200) {
+        LoopCount = 0
         ; SoundPlay, *48
         Send {e down}
         sleep 200
         Send {e up}
         sleep 2000
-        Send {LCtrl down}
-        sleep 100
-        Send {LCtrl up}
-        Click R D
-        sleep 100
-        Click R U
-        sleep 100
-        Send {e down}
-        sleep 2000
-        Send {e up}
+        if (CROUCH) {
+            Send {LCtrl down}
+            sleep 50
+            Send {LCtrl up}
+            Click R D
+            sleep 50
+            Click R U
+            sleep 50
+        } else {
+            sleep 150
+        }
+        if (RECAST) {
+            Send {e down}
+            sleep 2000
+            Send {e up}
+        }
     }
-    if (LoopCount >= 100) {
-        WaitCount++
+    if (JIGGLE && Mod(LoopCount, 100) == 0) {
         ; SoundPlay, *48
-        LoopCount = 0
         Send {d Down}
         sleep 12
         Send {d Up}
-        sleep 12
+        sleep 13
         Send {a Down}
         sleep 12
         Send {a Up}
-        sleep 14
+        sleep 13
     } else {
         sleep 50
     }
