@@ -10,16 +10,16 @@ Widths := [1280, 1366, 1440, 1600, 1680, 1920, 2560]
 Menu, Tray, Icon, script_icon_off.png
 JIGGLE = 1
 RECAST = 1
-CROUCH = 1
+CROUCH = 0
 F11::
 Toggle := !Toggle
 LoopCount = 0
 If Toggle {
     Menu, Tray, Icon, script_icon_on.png
-    SoundPlay, *48
+    SoundPlay, *64
 } Else {
     Menu, Tray, Icon, script_icon_off.png
-    SoundPlay, *16
+    SoundPlay, *48
 }
 Loop,
 {
@@ -34,6 +34,15 @@ Loop,
     }
     if (!Filename) {
         GetClientSize(hwnd, Width, Height)
+
+        if (Width == 0 && Height == 0) {
+            SoundPlay, *16
+            MsgBox, Could not fetch current window size, you may have to restart the game/script
+            Toggle := False
+            Menu, Tray, Icon, script_icon_off.png
+            Continue
+        }
+
         Closest = 2560
         OldDist = 2560
         For idx, w in Widths {
@@ -53,7 +62,7 @@ Loop,
     LoopCount++
 
     CoordMode, Pixel, Client
-    ImageSearch, FoundX, FoundY, TopLeftX, TopLeftY, BotRightX, BotRightY, %Filename%
+    ImageSearch, FoundX, FoundY, TopLeftX, TopLeftY, BotRightX, BotRightY, *24 %Filename%
 
     if (ErrorLevel == 0 || LoopCount >= 1200) {
         LoopCount = 0
