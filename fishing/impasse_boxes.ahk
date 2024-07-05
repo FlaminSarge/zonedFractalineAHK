@@ -29,8 +29,8 @@ Loop,
 {
     If !Toggle {
         Filename =
-		Send {A up}
-		Send {S up}
+        Send {A up}
+        Send {S up}
         Break
     }
     hwnd := WinActive("ahk_exe destiny2.exe")
@@ -71,35 +71,35 @@ Loop,
 
     LoopCount++
 
-	if (NeedMap) {
-		Send {f3 down}
-		sleep 100
-		Send {f3 up}
-		sleep 100
-		MouseMove, Move1X, Move1Y, 5, R
+    if (NeedMap) {
+        Send {f3 down}
+        sleep 100
+        Send {f3 up}
+        sleep 100
+        MouseMove, Move1X, Move1Y, 5, R
         sleep 500
         MouseMove, Move2X, Move2Y, 5, R
-		sleep 1000
-		Click d
-		sleep 2000
-		Click u
+        sleep 1000
+        Click d
+        sleep 2000
+        Click u
         Loop 35,
         {
             sleep 1000
             If !Toggle {
                 Filename =
                 Break
-		    }
+            }
         }
-		If !Toggle {
-			Filename =
-			Break
-		}
-		Send {A down}
-		Sleep 1800
-		Send {S down}
-		NeedMap := False
-	}
+        If !Toggle {
+            Filename =
+            Break
+        }
+        Send {A down}
+        Sleep 1800
+        Send {S down}
+        NeedMap := False
+    }
 
     CoordMode, Pixel, Client
     ImageSearch, FoundX, FoundY, TopLeftX, TopLeftY, BotRightX, BotRightY, *24 %Filename%
@@ -108,14 +108,14 @@ Loop,
         LoopCount = 0
         ; SoundPlay, *48
         Send {A up}
-		Send {S up}
+        Send {S up}
         sleep 200
-		if (ErrorLevel == 0) {
-			Send {e down}
-			sleep 2000
-			Send {e up}
-			sleep 2000
-		}
+        if (ErrorLevel == 0) {
+            Send {e down}
+            sleep 2000
+            Send {e up}
+            sleep 2000
+        }
         if (CROUCH) {
             Send {LCtrl down}
             sleep 50
@@ -128,7 +128,7 @@ Loop,
             sleep 150
         }
         if (RECAST) {
-			NeedMap := True
+            NeedMap := True
         }
     }
     if (JIGGLE && Mod(LoopCount, 100) == 0) {
